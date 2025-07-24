@@ -6,7 +6,7 @@ import {
   selectAllProducts,
   productDeleted,
 } from "../features/product/productSlice";
-
+import { toast } from "react-toastify";
 export default function Product() {
   const [showForm, setShowForm] = useState(false);
   const [currentProduct, setCurrentProduct] = useState(null);
@@ -28,6 +28,7 @@ export default function Product() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       dispatch(productDeleted(id));
+      toast.error("Product deleted successfully!");
     }
   };
 

@@ -1,5 +1,7 @@
 /** @format */
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,7 +32,6 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
-
         <Route
           element={
             isAuthenticated ? <ProtectedLayout /> : <Navigate to="/login" />
@@ -38,11 +39,13 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/product" element={<Product />} />
           <Route path="/categories" element={<Categories />} />
+
           <Route index element={<Navigate to="/dashboard" />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
+      <ToastContainer position="top-right" autoClose={3000} />
     </Router>
   );
 }

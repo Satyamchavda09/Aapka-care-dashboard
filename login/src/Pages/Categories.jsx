@@ -6,7 +6,7 @@ import {
   selectAllCategories,
   categoryDeleted,
 } from "../features/categories/categoriesSlice";
-
+import { toast } from "react-toastify";
 export default function Categories() {
   const [showForm, setShowForm] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(null);
@@ -28,6 +28,7 @@ export default function Categories() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       dispatch(categoryDeleted(id));
+      toast.error("Category deleted successfully!");
     }
   };
 

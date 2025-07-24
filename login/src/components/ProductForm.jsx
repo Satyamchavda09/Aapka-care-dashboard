@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { productAdded, productUpdated } from "../features/product/productSlice";
-
+import { toast } from "react-toastify";
 export default function Form({ onClose, productToEdit }) {
   const dispatch = useDispatch();
   const [name, setName] = useState(productToEdit?.name || "");
@@ -32,6 +32,7 @@ export default function Form({ onClose, productToEdit }) {
           image,
         })
       );
+      toast.success("Product updated successfully!");
     } else {
       dispatch(
         productAdded({
@@ -41,10 +42,12 @@ export default function Form({ onClose, productToEdit }) {
           image,
         })
       );
+      toast.success("Product added successfully!");
     }
 
     onClose();
   };
+  
 
   return (
     <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md relative">

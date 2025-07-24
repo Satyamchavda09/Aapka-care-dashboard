@@ -1,6 +1,7 @@
 /** @format */
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import {
   categoryAdded,
   categoryUpdated,
@@ -35,6 +36,7 @@ export default function Form({ onClose, categoryToEdit }) {
           image,
         })
       );
+      toast.success("Category updated successfully!");
     } else {
       dispatch(
         categoryAdded({
@@ -44,6 +46,7 @@ export default function Form({ onClose, categoryToEdit }) {
           image,
         })
       );
+      toast.success("Category added successfully!");
     }
 
     onClose();
