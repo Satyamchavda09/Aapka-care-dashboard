@@ -8,6 +8,7 @@ const sidebarSlice = createSlice({
       { id: 'Dashboard', checked: false },
       { id: 'Categories', checked: false },
       { id: 'Prodcut', checked: true },
+      { id: 'Brand', checked: true },
       { id: 'Logout', checked: false },
     ]
   },

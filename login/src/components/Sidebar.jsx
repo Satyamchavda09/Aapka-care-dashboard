@@ -1,7 +1,7 @@
 /** @format */
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { FiHome, FiLayers, FiBox, FiLogOut } from "react-icons/fi";
+import { FiHome, FiLayers, FiBox, FiLogOut, FiTag } from "react-icons/fi";
 
 export default function Sidebar() {
   const navigate = useNavigate();
@@ -37,6 +37,11 @@ export default function Sidebar() {
       icon: <FiBox size={20} />,
       name: "Product",
       nv: "/product",
+    },
+    {
+      icon: <FiTag size={20} />,
+      name: "Brand",
+      nv: "/brand",
     },
     {
       icon: <FiLogOut size={20} />,

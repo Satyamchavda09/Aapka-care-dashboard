@@ -14,6 +14,7 @@ import Login from "./Login";
 import Dashboard from "../src/Pages/Dashboard";
 import Product from "../src/Pages/Product";
 import Categories from "../src/Pages/Categories";
+import Brand from "../src/Pages/Brand";
 import Sidebar from "../src/components/Sidebar";
 
 export default function App() {
@@ -39,7 +40,7 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/product" element={<Product />} />
           <Route path="/categories" element={<Categories />} />
-
+          <Route path="/brand" element={<Brand />} />
           <Route index element={<Navigate to="/dashboard" />} />
         </Route>
 
